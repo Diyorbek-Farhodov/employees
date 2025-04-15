@@ -3,17 +3,17 @@ from datetime import datetime
 from pydantic import BaseModel
 
 
-class DepartmentData(BaseModel):
+class CategoryData(BaseModel):
     name: str
     created_at: datetime
 
 
-class DepartmentRequest(DepartmentData):
+class CategoryRequest(CategoryData):
     class Config:
         from_attributes = True
 
 
-class DepartmentResponse(DepartmentData):
+class CategoryResponse(CategoryData):
     id: int
     class Config:
         from_attributes = True

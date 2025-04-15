@@ -80,6 +80,12 @@ class DepartmentException(HTTPException):
             detail="Bu department allaqochon mavjud ",
             headers={"WWW-Authenticate": "Bearer"})
 
+class CategoryException(HTTPException):
+    def __init__(self):
+        super().__init__(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Bu kategoriya allaqochon mavjud ",
+            headers={"WWW-Authenticate": "Bearer"})
 
 
 class NotDepartmentException(HTTPException):
@@ -89,6 +95,12 @@ class NotDepartmentException(HTTPException):
             detail="Bo'lim mavjud emas",
             headers={"WWW-Authenticate": "Bearer"})
 
+class NotCategoryException(HTTPException):
+    def __init__(self):
+        super().__init__(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Category mavjud emas",
+            headers={"WWW-Authenticate": "Bearer"})
 
 class NotDeviceException(HTTPException):
     def __init__(self):
