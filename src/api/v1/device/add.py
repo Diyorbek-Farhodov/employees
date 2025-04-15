@@ -22,4 +22,4 @@ async def add_device(
     await db.commit()
     await db.refresh(new_device)
 
-    return DevicesCreateResponse
+    return DevicesCreateResponse.from_orm(new_device)
